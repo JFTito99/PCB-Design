@@ -352,6 +352,32 @@ chip</description>
 <text x="-4.53" y="5.22" size="1.778" layer="25" font="vector" ratio="12">&gt;NAME</text>
 <text x="-4.59" y="-15.64" size="1.778" layer="27" font="vector" ratio="12">&gt;VALUE</text>
 </package>
+<package name="POT-PO90S">
+<pad name="CCW" x="-2.5" y="0" drill="1"/>
+<pad name="S" x="0" y="0" drill="1"/>
+<pad name="CW" x="2.5" y="0" drill="1"/>
+<hole x="-5" y="7" drill="2.5"/>
+<hole x="5" y="7" drill="2.5"/>
+<wire x1="-5" y1="0" x2="-5" y2="5" width="0.127" layer="21"/>
+<wire x1="-5" y1="9" x2="-5" y2="12.5" width="0.127" layer="21"/>
+<wire x1="-5" y1="12.5" x2="5" y2="12.5" width="0.127" layer="21"/>
+<wire x1="5" y1="12.5" x2="5" y2="9" width="0.127" layer="21"/>
+<wire x1="5" y1="5" x2="5" y2="0" width="0.127" layer="21"/>
+<wire x1="5" y1="0" x2="4" y2="0" width="0.127" layer="21"/>
+<wire x1="-5" y1="0" x2="-4" y2="0" width="0.127" layer="21"/>
+<circle x="0" y="7" radius="3" width="0.127" layer="21"/>
+<text x="-5.08" y="12.7" size="0.8128" layer="25">&gt;NAME</text>
+<text x="-5.08" y="-2.54" size="0.8128" layer="27">&gt;VALUE</text>
+</package>
+<package name="SERVO_PINS">
+<pad name="P$1" x="-2.54" y="0" drill="0.889" diameter="1.524" shape="octagon"/>
+<pad name="P$2" x="0" y="0" drill="0.889" diameter="1.524" shape="octagon"/>
+<pad name="P$3" x="2.54" y="0" drill="0.889" diameter="1.524" shape="octagon"/>
+<wire x1="-3.81" y1="1.27" x2="-3.81" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-1.27" x2="3.81" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="-1.27" x2="3.81" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="1.27" x2="-3.81" y2="1.27" width="0.1524" layer="21"/>
+</package>
 </packages>
 </library>
 </libraries>
@@ -551,15 +577,15 @@ design rules under a new name.</description>
 <attribute name="NAME" x="-67.91" y="44.57" size="0.8128" layer="25" font="vector" ratio="12"/>
 <attribute name="VALUE" x="-68.31" y="37.67" size="0.8128" layer="27" font="vector" ratio="12"/>
 </element>
-<element name="R1" library="ColorfulTunes" package="R0402" value="" x="-46.99" y="71.12" smashed="yes">
+<element name="R1" library="ColorfulTunes" package="R0402" value="470 M" x="-46.99" y="71.12" smashed="yes">
 <attribute name="NAME" x="-47.879" y="71.628" size="0.8128" layer="25"/>
 <attribute name="VALUE" x="-47.879" y="70.358" size="0.254" layer="27"/>
 </element>
-<element name="R2" library="ColorfulTunes" package="R0402" value="" x="-49.53" y="71.12" smashed="yes">
+<element name="R2" library="ColorfulTunes" package="R0402" value="470 M" x="-49.53" y="71.12" smashed="yes">
 <attribute name="NAME" x="-50.419" y="71.628" size="0.8128" layer="25"/>
 <attribute name="VALUE" x="-50.419" y="70.358" size="0.254" layer="27"/>
 </element>
-<element name="R3" library="ColorfulTunes" package="R0402" value="" x="-52.07" y="71.12" smashed="yes">
+<element name="R3" library="ColorfulTunes" package="R0402" value="470 M" x="-52.07" y="71.12" smashed="yes">
 <attribute name="NAME" x="-52.959" y="71.628" size="0.8128" layer="25"/>
 <attribute name="VALUE" x="-52.959" y="70.358" size="0.254" layer="27"/>
 </element>
@@ -568,11 +594,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="-60.96" y="67.31" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-60.96" y="38.1" size="1.27" layer="27"/>
 </element>
-<element name="R4" library="ColorfulTunes" package="R0402" value="" x="-68.58" y="-2.54" smashed="yes">
+<element name="R4" library="ColorfulTunes" package="R0402" value="2.2 k" x="-68.58" y="-2.54" smashed="yes">
 <attribute name="NAME" x="-69.469" y="-2.032" size="0.8128" layer="25"/>
 <attribute name="VALUE" x="-69.469" y="-3.302" size="0.254" layer="27"/>
 </element>
-<element name="R5" library="ColorfulTunes" package="R0402" value="" x="-68.58" y="-6.35" smashed="yes">
+<element name="R5" library="ColorfulTunes" package="R0402" value="2.2k" x="-68.58" y="-6.35" smashed="yes">
 <attribute name="NAME" x="-69.469" y="-5.842" size="0.8128" layer="25"/>
 <attribute name="VALUE" x="-69.469" y="-7.112" size="0.254" layer="27"/>
 </element>
@@ -589,22 +615,17 @@ design rules under a new name.</description>
 <attribute name="NAME" x="-84.54" y="2.68" size="1.778" layer="25" font="vector" ratio="12"/>
 <attribute name="VALUE" x="-84.6" y="-18.18" size="1.778" layer="27" font="vector" ratio="12"/>
 </element>
+<element name="R8" library="ColorfulTunes" package="POT-PO90S" value="POTENTIOMETER" x="-95.25" y="-15.24" smashed="yes">
+<attribute name="NAME" x="-100.33" y="-2.54" size="0.8128" layer="25"/>
+<attribute name="VALUE" x="-100.33" y="-17.78" size="0.8128" layer="27"/>
+</element>
+<element name="SERVO1" library="ColorfulTunes" package="SERVO_PINS" value="SERVO_PINS" x="-96.52" y="-20.32" smashed="yes"/>
 </elements>
 <signals>
-<signal name="N$1">
-<contactref element="R1" pad="1"/>
-<contactref element="D1" pad="2"/>
-<wire x1="-65.31" y1="43.17" x2="-47.5488" y2="71.12" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="N$2">
 <contactref element="R2" pad="1"/>
 <contactref element="D1" pad="3"/>
 <wire x1="-50.0888" y1="71.12" x2="-65.31" y2="40.07" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$3">
-<contactref element="R3" pad="1"/>
-<contactref element="D1" pad="4"/>
-<wire x1="-52.6288" y1="71.12" x2="-66.81" y2="40.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="B">
 <contactref element="R1" pad="2"/>
@@ -642,7 +663,9 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="49"/>
 <contactref element="U$1" pad="1"/>
 <contactref element="CS1" pad="VIN"/>
-<wire x1="-63.754" y1="6.858" x2="-52.07" y2="-10.16" width="0" layer="19" extent="1-1"/>
+<contactref element="SERVO1" pad="P$2"/>
+<wire x1="-63.754" y1="6.858" x2="-96.52" y2="-20.32" width="0" layer="19" extent="1-1"/>
+<wire x1="-52.07" y1="-10.16" x2="-63.754" y2="6.858" width="0" layer="19" extent="1-1"/>
 <wire x1="-35.814" y1="9.398" x2="-52.07" y2="-10.16" width="0" layer="19" extent="1-1"/>
 <wire x1="-48.514" y1="29.21" x2="-35.814" y2="9.398" width="0" layer="19" extent="1-1"/>
 <wire x1="-34.036" y1="64.77" x2="-48.514" y2="29.21" width="0" layer="19" extent="1-1"/>
@@ -668,6 +691,8 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="22"/>
 <contactref element="U1" pad="GND"/>
 <contactref element="CS1" pad="GND"/>
+<contactref element="SERVO1" pad="P$1"/>
+<wire x1="-54.61" y1="-10.16" x2="-99.06" y2="-20.32" width="0" layer="19" extent="1-1"/>
 <wire x1="-45.974" y1="9.398" x2="-54.61" y2="-10.16" width="0" layer="19" extent="1-1"/>
 <wire x1="-38.354" y1="9.398" x2="-45.974" y2="9.398" width="0" layer="19" extent="1-1"/>
 <wire x1="-45.974" y1="29.21" x2="-45.974" y2="9.398" width="0" layer="19" extent="1-1"/>
@@ -714,6 +739,36 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="3"/>
 <contactref element="U$1" pad="5"/>
 <wire x1="-58.674" y1="6.858" x2="-61.214" y2="6.858" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AIN_1V8.0">
+<contactref element="R8" pad="S"/>
+<contactref element="U$1" pad="19"/>
+<wire x1="-40.894" y1="6.858" x2="-95.25" y2="-15.24" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AIN_1V8.REF+">
+<contactref element="R8" pad="CCW"/>
+<contactref element="U$1" pad="18"/>
+<wire x1="-43.434" y1="9.398" x2="-97.75" y2="-15.24" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AIN_1V8.REF-">
+<contactref element="R8" pad="CW"/>
+<contactref element="U$1" pad="17"/>
+<wire x1="-43.434" y1="6.858" x2="-92.75" y2="-15.24" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="SERVO_PWM">
+<contactref element="SERVO1" pad="P$3"/>
+<contactref element="U$1" pad="36"/>
+<wire x1="-20.574" y1="9.398" x2="-93.98" y2="-20.32" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$1">
+<contactref element="D1" pad="2"/>
+<contactref element="R1" pad="1"/>
+<wire x1="-65.31" y1="43.17" x2="-47.5488" y2="71.12" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$3">
+<contactref element="D1" pad="4"/>
+<contactref element="R3" pad="1"/>
+<wire x1="-52.6288" y1="71.12" x2="-66.81" y2="40.07" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
