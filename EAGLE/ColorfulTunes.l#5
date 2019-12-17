@@ -473,20 +473,6 @@ chip</description>
 <text x="11.938" y="1.27" size="0.635" layer="21" font="vector" ratio="12">GND</text>
 <text x="14.732" y="1.27" size="0.635" layer="21" font="vector" ratio="12">VIN</text>
 </package>
-<package name="USB_BOI">
-<pad name="D+" x="1" y="0" drill="0.92" diameter="1.524"/>
-<pad name="D-" x="-1" y="0" drill="0.92" diameter="1.524"/>
-<pad name="GND" x="3.5" y="0" drill="0.92" diameter="1.524"/>
-<pad name="5V" x="-3.5" y="0" drill="0.92" diameter="1.524"/>
-<pad name="SHIELD_1" x="6.57" y="-2.71" drill="2.3" diameter="3"/>
-<pad name="SHIELD_2" x="-6.57" y="-2.71" drill="2.3" diameter="3"/>
-<wire x1="-7.85" y1="-13.01" x2="7.85" y2="-13.01" width="0.1524" layer="21"/>
-<wire x1="-7.85" y1="4.1" x2="7.85" y2="4.1" width="0.1524" layer="21"/>
-<wire x1="-7.85" y1="4.1" x2="-7.85" y2="-13.01" width="0.1524" layer="21"/>
-<wire x1="7.85" y1="4.1" x2="7.85" y2="-13.01" width="0.1524" layer="21"/>
-<text x="-4.53" y="5.22" size="1.778" layer="25" font="vector" ratio="12">&gt;NAME</text>
-<text x="-4.59" y="-15.64" size="1.778" layer="27" font="vector" ratio="12">&gt;VALUE</text>
-</package>
 </packages>
 <symbols>
 <symbol name="0.56_HEX_BACKPACK">
@@ -785,8 +771,6 @@ chip</description>
 <pin name="D-" x="-5.08" y="-10.16" length="middle"/>
 <pin name="5V" x="-5.08" y="-12.7" length="middle"/>
 <pin name="SHIELD_2" x="-5.08" y="-15.24" length="middle"/>
-<text x="2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
-<text x="2.54" y="-22.86" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1104,26 +1088,6 @@ Sizes: 0402, 0603 &amp; 0805</description>
 <connect gate="G$1" pin="SCL" pad="SCL"/>
 <connect gate="G$1" pin="SDA" pad="SDA"/>
 <connect gate="G$1" pin="VIN" pad="VIN"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="USB_BOI" prefix="USB">
-<gates>
-<gate name="G$1" symbol="USB_BOI" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="USB_BOI">
-<connects>
-<connect gate="G$1" pin="5V" pad="5V"/>
-<connect gate="G$1" pin="D+" pad="D+"/>
-<connect gate="G$1" pin="D-" pad="D-"/>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="SHIELD_1" pad="SHIELD_1"/>
-<connect gate="G$1" pin="SHIELD_2" pad="SHIELD_2"/>
 </connects>
 <technologies>
 <technology name=""/>
