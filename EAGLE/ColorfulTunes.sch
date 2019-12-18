@@ -252,6 +252,9 @@
 <pad name="72" x="49.276" y="30.48" drill="0.889" diameter="1.524" shape="octagon"/>
 <pad name="2" x="6.096" y="8.128" drill="0.889" diameter="1.524" shape="octagon"/>
 <pad name="38" x="6.096" y="30.48" drill="0.889" diameter="1.524" shape="octagon"/>
+<text x="20.32" y="22.86" size="1.778" layer="21" font="vector" ratio="12">PocketBeagle</text>
+<text x="3.81" y="6.35" size="1.4224" layer="25" font="vector" ratio="12" rot="R90">P1</text>
+<text x="3.81" y="27.94" size="1.4224" layer="25" font="vector" ratio="12" rot="R90">P2</text>
 </package>
 <package name="0.56_HEX_BACKPACK">
 <wire x1="22.479" y1="-13.335" x2="25.019" y2="-10.795" width="0.508" layer="21" curve="90"/>
@@ -391,6 +394,11 @@ chip</description>
 <circle x="-4" y="-3" radius="0.1" width="0.254" layer="21"/>
 <text x="-3.81" y="5.08" size="0.8128" layer="25">&gt;NAME</text>
 <text x="-3.81" y="-6.35" size="0.8128" layer="27">&gt;VALUE</text>
+</package>
+<package name="FIDUCIAL_40MIL">
+<circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
+<circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
 </package>
 </packages>
 <symbols>
@@ -680,6 +688,15 @@ chip</description>
 <pin name="POS2" x="0" y="-2.54" visible="off" length="short" rot="R180"/>
 <text x="-10.16" y="5.08" size="1.778" layer="95">&gt;NAME</text>
 <text x="-10.16" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="FIDUCIAL">
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="0" visible="off" length="point" direction="nc"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -975,6 +992,21 @@ DIN A3, landscape with location and doc. field</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="FIDUCIAL" prefix="FUD">
+<gates>
+<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FIDUCIAL_40MIL">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -1021,6 +1053,9 @@ DIN A3, landscape with location and doc. field</description>
 <part name="GND6" library="ColorfulTunes" deviceset="GND" device=""/>
 <part name="SUPPLY11" library="ColorfulTunes" deviceset="VDD_3P3V" device=""/>
 <part name="GND7" library="ColorfulTunes" deviceset="GND" device=""/>
+<part name="FUD1" library="ColorfulTunes" deviceset="FIDUCIAL" device=""/>
+<part name="FUD2" library="ColorfulTunes" deviceset="FIDUCIAL" device=""/>
+<part name="FUD3" library="ColorfulTunes" deviceset="FIDUCIAL" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1163,6 +1198,9 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="GND7" gate="1" x="161.29" y="214.63" smashed="yes">
 <attribute name="VALUE" x="158.75" y="212.09" size="1.778" layer="96"/>
 </instance>
+<instance part="FUD1" gate="G$1" x="152.4" y="60.96" smashed="yes"/>
+<instance part="FUD2" gate="G$1" x="160.02" y="60.96" smashed="yes"/>
+<instance part="FUD3" gate="G$1" x="167.64" y="60.96" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -1357,12 +1395,14 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="92.71" y1="53.34" x2="92.71" y2="59.69" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="USB1.ID"/>
 <pinref part="U$1" gate="G$1" pin="USB1.GND"/>
-<wire x1="247.65" y1="204.47" x2="247.65" y2="201.93" width="0.1524" layer="91"/>
-<wire x1="247.65" y1="201.93" x2="232.41" y2="201.93" width="0.1524" layer="91"/>
-<junction x="247.65" y="201.93"/>
+<wire x1="247.65" y1="201.93" x2="243.84" y2="201.93" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="U$1" gate="G$1" pin="USB1.ID"/>
+<wire x1="243.84" y1="201.93" x2="232.41" y2="201.93" width="0.1524" layer="91"/>
+<wire x1="247.65" y1="204.47" x2="243.84" y2="204.47" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="204.47" x2="243.84" y2="201.93" width="0.1524" layer="91"/>
+<junction x="243.84" y="201.93"/>
 </segment>
 <segment>
 <pinref part="USB1" gate="G$1" pin="GND"/>
@@ -1444,13 +1484,6 @@ DIN A3, landscape with location and doc. field</description>
 <label x="228.6" y="212.09" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="USB1.V_EN"/>
-<pinref part="U$1" gate="G$1" pin="USB1.VBUS"/>
-<wire x1="247.65" y1="217.17" x2="247.65" y2="214.63" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="AIN_1V8.0" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="S"/>
@@ -1525,6 +1558,15 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="U$1" gate="G$1" pin="PRU0.6"/>
 <wire x1="313.69" y1="189.23" x2="330.2" y2="189.23" width="0.1524" layer="91"/>
 <label x="320.04" y="189.23" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="USB1.V_EN"/>
+<wire x1="247.65" y1="217.17" x2="243.84" y2="217.17" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="217.17" x2="243.84" y2="214.63" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="USB1.VBUS"/>
+<wire x1="243.84" y1="214.63" x2="247.65" y2="214.63" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
