@@ -400,6 +400,9 @@ chip</description>
 <circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
 <smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
 </package>
+<package name="MOUNTING_HOLE">
+<pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
+</package>
 </packages>
 <symbols>
 <symbol name="FRAMES_A3L-LOC">
@@ -697,6 +700,11 @@ chip</description>
 <wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
 <pin name="P$1" x="0" y="0" visible="off" length="point" direction="nc"/>
+</symbol>
+<symbol name="MOUNTING_HOLE">
+<circle x="0" y="2.54" radius="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="-5.08" visible="off" length="middle" rot="R90"/>
+<text x="0.762" y="-2.032" size="1.27" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1007,6 +1015,22 @@ DIN A3, landscape with location and doc. field</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="MOUNTING_HOLE" prefix="MGT">
+<description>Chassis Mounting Hole w/GND connection ability</description>
+<gates>
+<gate name="G$1" symbol="MOUNTING_HOLE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOUNTING_HOLE">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -1056,6 +1080,9 @@ DIN A3, landscape with location and doc. field</description>
 <part name="FUD1" library="ColorfulTunes" deviceset="FIDUCIAL" device=""/>
 <part name="FUD2" library="ColorfulTunes" deviceset="FIDUCIAL" device=""/>
 <part name="FUD3" library="ColorfulTunes" deviceset="FIDUCIAL" device=""/>
+<part name="MGT1" library="ColorfulTunes" deviceset="MOUNTING_HOLE" device=""/>
+<part name="MGT2" library="ColorfulTunes" deviceset="MOUNTING_HOLE" device=""/>
+<part name="MGT3" library="ColorfulTunes" deviceset="MOUNTING_HOLE" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1201,6 +1228,15 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="FUD1" gate="G$1" x="152.4" y="60.96" smashed="yes"/>
 <instance part="FUD2" gate="G$1" x="160.02" y="60.96" smashed="yes"/>
 <instance part="FUD3" gate="G$1" x="167.64" y="60.96" smashed="yes"/>
+<instance part="MGT1" gate="G$1" x="152.4" y="76.2" smashed="yes">
+<attribute name="NAME" x="153.162" y="74.168" size="1.27" layer="95"/>
+</instance>
+<instance part="MGT2" gate="G$1" x="162.56" y="76.2" smashed="yes">
+<attribute name="NAME" x="163.322" y="74.168" size="1.27" layer="95"/>
+</instance>
+<instance part="MGT3" gate="G$1" x="175.26" y="76.2" smashed="yes">
+<attribute name="NAME" x="176.022" y="74.168" size="1.27" layer="95"/>
+</instance>
 </instances>
 <busses>
 </busses>

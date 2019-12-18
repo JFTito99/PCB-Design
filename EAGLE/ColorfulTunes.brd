@@ -176,9 +176,6 @@
 <wire x1="91.44" y1="90.17" x2="0" y2="90.17" width="0" layer="20"/>
 <wire x1="0" y1="90.17" x2="0" y2="0" width="0" layer="20"/>
 <text x="49.276" y="1.778" size="1.778" layer="25" font="vector" ratio="12">JFTA</text>
-<hole x="2.54" y="2.794" drill="0.35"/>
-<hole x="2.54" y="87.63" drill="0.35"/>
-<hole x="89.408" y="87.63" drill="0.35"/>
 <text x="20.828" y="1.778" size="1.778" layer="25" font="vector" distance="12">COLORFUL TUNES</text>
 <text x="10.16" y="2.032" size="1.778" layer="25" font="vector" ratio="12">REV. 1</text>
 </plain>
@@ -413,6 +410,9 @@ chip</description>
 <circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
 <circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
 <smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
+</package>
+<package name="MOUNTING_HOLE">
+<pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
 </package>
 </packages>
 </library>
@@ -651,7 +651,10 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 </element>
 <element name="FUD1" library="ColorfulTunes" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="6.35" y="2.794" smashed="yes"/>
 <element name="FUD2" library="ColorfulTunes" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="6.35" y="87.63" smashed="yes"/>
-<element name="FUD3" library="ColorfulTunes" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="86.106" y="87.63" smashed="yes"/>
+<element name="FUD3" library="ColorfulTunes" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="85.344" y="87.63" smashed="yes"/>
+<element name="MGT1" library="ColorfulTunes" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="2.794" y="2.794" smashed="yes"/>
+<element name="MGT2" library="ColorfulTunes" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="2.794" y="85.852" smashed="yes"/>
+<element name="MGT3" library="ColorfulTunes" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="88.9" y="85.852" smashed="yes"/>
 </elements>
 <signals>
 <signal name="N$2">
