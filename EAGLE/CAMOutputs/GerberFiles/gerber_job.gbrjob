@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2019-12-18T07:14:57Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.5.1"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.53,
+        "LayerNumber": 4,
+        "Name": {
+            "ProjectId": "ColorfulTunes"
+        },
+        "Owner": "jft3 jft3 <jft3@rice.edu>",
+        "Size": {
+            "X": 91.44,
+            "Y": 90.17
+        }
+    }
+}
